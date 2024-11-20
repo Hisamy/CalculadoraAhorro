@@ -9,7 +9,7 @@ public class Calculadora {
      * @param porcentajeInteres porcentaje de la tasa de interés.
      */
     public void mostrarTabla(ArrayList<Float> aportes, Float porcentajeInteres) {
-        System.out.printf("%-10s %-15s %-15s %-15s\n", "Mes", "Aporte", "Interés", "Total");
+        System.out.printf("%-10s %-15s  %-15s  %-15s\n", "Mes", "Aporte", "Interés", "Total");
 
         int mes = 1;
         Float totalNeto = 0f;
@@ -18,13 +18,13 @@ public class Calculadora {
             Float interesCalculado = calcularCostoInteres(aporte, porcentajeInteres);
             Float totalCalculado = calcularTotalMes(aporte, interesCalculado);
 
-            System.out.printf("%-10d $%-15.2f $%-15.2f $%-15.2f\n", mes, aporte, interesCalculado, totalCalculado);
+            System.out.printf("%-10d $%-15.4f $%-15.4f $%-15.4f\n", mes, aporte, interesCalculado, totalCalculado);
 
             mes++;
             totalNeto += totalCalculado;
 
         }
-        System.out.println("Total neto: $" + totalNeto);
+        System.out.printf("Total neto: $%-20.4f",totalNeto);
     }
 
     /**
